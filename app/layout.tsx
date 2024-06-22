@@ -7,9 +7,17 @@ import { cn } from "@/lib/utils"
 import type { Metadata, Viewport } from "next"
 import type { ReactNode } from "react"
 
+const TITLE = "SMT V Skills & Demons Info"
+const DESCRIPTION = "Details on skills, demon elemental affinities, and ailment susceptibility in Shin Megami Tensei V"
+
 export const metadata: Metadata = {
-	title: "SMT V Skill Tier List",
-	description: "A skill tier list for Shin Megami Tensei V"
+	title: TITLE,
+	description: DESCRIPTION,
+	openGraph: {
+		title: TITLE,
+		description: DESCRIPTION,
+		type: "website"
+	}
 }
 
 export const viewport: Viewport = {
