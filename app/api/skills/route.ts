@@ -7,7 +7,7 @@ export const GET = async (request: Request) => {
 	const { searchParams } = new URL(request.url)
 
 	const skillNamePart = searchParams.get("skillNamePart")
-	if (!skillNamePart) return new NextResponse("skillName query param is required", { status: 400 })
+	if (!skillNamePart) return new NextResponse("skillNamePart query param is required", { status: 400 })
 
 	const skills = Array.from(Skill.map.values()).filter(
 		(skill) =>
