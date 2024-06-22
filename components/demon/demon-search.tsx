@@ -11,7 +11,7 @@ export const DemonSearch = () => {
 	return (
 		<div className={cn("flex", "flex-col", "items-center", "justify-center", "gap-8", "w-full")}>
 			<Input placeholder={"Demon"} value={demonName} onChange={(e) => setDemonName(e.target.value)} />
-			{demonName.length >= 1 && <DemonFetcher demonName={demonName} />}
+			{demonName.length >= 2 && <DemonFetcher demonName={demonName} />}
 		</div>
 	)
 }
