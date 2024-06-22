@@ -1,24 +1,5 @@
-import { SKILLS_BY_TIER } from "@/lib/data/skills_by_tier"
 import type { Tier } from "@/lib/types/skill"
 import { exhaustiveCheck } from "@/lib/utils"
-
-const isTier = (tier: string): tier is Tier => ["S", "A", "B", "C"].includes(tier)
-
-export const getSkillsAndTiers = (
-	part: string
-): {
-	skill: string
-	tier: Tier
-}[] =>
-	Object.entries(SKILLS_BY_TIER).flatMap(([tier, skills]) => {
-		if (isTier(tier)) {
-			return skills
-				.filter((skill) => skill.toLowerCase().includes(part.toLowerCase()))
-				.map((skill) => ({ skill, tier }))
-		}
-
-		return []
-	})
 
 export const getColorForTier = (tier: Tier) => {
 	switch (tier) {

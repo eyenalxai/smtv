@@ -401,4 +401,4 @@ export const SKILLS_BY_TIER = {
 		"Estoma",
 		"Dekajaon"
 	]
-} as const
+}
