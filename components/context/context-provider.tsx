@@ -1,3 +1,4 @@
+import { DemonNameContextProvider } from "@/components/context/demon-name"
 import { SkillNameContextProvider } from "@/components/context/skill-name"
 import type { ReactNode } from "react"
 
@@ -6,5 +7,9 @@ type ContextProviderProps = {
 }
 
 export const ContextProvider = ({ children }: ContextProviderProps) => {
-	return <SkillNameContextProvider>{children}</SkillNameContextProvider>
+	return (
+		<DemonNameContextProvider>
+			<SkillNameContextProvider>{children}</SkillNameContextProvider>
+		</DemonNameContextProvider>
+	)
 }
