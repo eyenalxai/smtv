@@ -1,4 +1,4 @@
-export const skills_by_tier = {
+export const SKILLS_BY_TIER = {
 	S: [
 		"Chaotic Will",
 		"Frolic",
