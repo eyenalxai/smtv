@@ -1,5 +1,6 @@
 "use client"
 
+import { ContextProvider } from "@/components/context/context-provider"
 import { QueryClient, QueryClientProvider, isServer } from "@tanstack/react-query"
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 import type { ThemeProviderProps } from "next-themes/dist/types"
@@ -26,8 +27,10 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
 	const queryClient = getQueryClient()
 
 	return (
-		<QueryClientProvider client={queryClient}>
-			<NextThemesProvider {...props}>{children}</NextThemesProvider>
-		</QueryClientProvider>
+		<ContextProvider>
+			<QueryClientProvider client={queryClient}>
+				<NextThemesProvider {...props}>{children}</NextThemesProvider>
+			</QueryClientProvider>
+		</ContextProvider>
 	)
 }
