@@ -1,4 +1,4 @@
-import { SkillCard } from "@/components/skill-card"
+import { SkillCard } from "@/components/skill/skill-card"
 import type { SkillWithType } from "@/lib/types/skill"
 import { cn } from "@/lib/utils"
 import { useQuery } from "@tanstack/react-query"

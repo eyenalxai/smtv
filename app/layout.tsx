@@ -1,4 +1,5 @@
 import "./globals.css"
+import { NavigationBar } from "@/components/navigation-bar"
 import { Providers } from "@/components/providers"
 import { fontMono, fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
@@ -22,7 +23,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 		<html lang="en" suppressHydrationWarning>
 			<body className={cn("font-sans antialiased", fontSans.variable, fontMono.variable)}>
 				<Providers attribute="class" defaultTheme="system" enableSystem>
-					<div className={cn("my-12", "px-4", "flex", "flex-col", "items-center", "justify-center", "w-full")}>
+					<NavigationBar className={cn("mt-4")} />
+					<div className={cn("my-12", "px-4", "flex", "flex-col", "items-center", "justify-center", "w-full", "gap-4")}>
 						<main className={cn("w-96")}>{children}</main>
 					</div>
 				</Providers>

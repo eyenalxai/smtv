@@ -1,6 +1,6 @@
 "use client"
 
-import { SkillFetcher } from "@/components/skill-fetcher"
+import { SkillFetcher } from "@/components/skill/skill-fetcher"
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 import { useState } from "react"

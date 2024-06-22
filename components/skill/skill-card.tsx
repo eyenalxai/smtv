@@ -1,4 +1,4 @@
-import { SkillDetail } from "@/components/skill-detail"
+import { SkillDetail } from "@/components/skill/skill-detail"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getColorForTier } from "@/lib/skills"
 import type { Tier } from "@/lib/types/skill"
