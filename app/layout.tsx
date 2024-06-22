@@ -3,10 +3,10 @@ import { NavigationBar } from "@/components/navigation-bar"
 import { Providers } from "@/components/providers"
 import { fontMono, fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
-import type { Viewport } from "next"
+import type { Metadata, Viewport } from "next"
 import type { ReactNode } from "react"
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: "SMT V Skill Tier List",
 	description: "A skill tier list for Shin Megami Tensei V"
 }
