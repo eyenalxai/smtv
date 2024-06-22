@@ -10,7 +10,7 @@ export const SkillSearch = () => {
 
 	return (
 		<div className={cn("flex", "flex-col", "items-center", "justify-center", "gap-8", "w-full")}>
-			<Input placeholder={"Skill Name"} value={skillName} onChange={(e) => setSkillName(e.target.value)} />
+			<Input placeholder={"Skill"} value={skillName} onChange={(e) => setSkillName(e.target.value)} />
 			{skillName.length >= 2 && <SkillFetcher skillName={skillName} />}
 		</div>
 	)
