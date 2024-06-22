@@ -1,6 +1,7 @@
 import "./globals.css"
 import { NavigationBar } from "@/components/navigation-bar"
 import { Providers } from "@/components/providers"
+import { ScrollAnchor } from "@/components/scroll-anchor"
 import { fontMono, fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import type { Metadata, Viewport } from "next"
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 					<div className={cn("my-12", "px-4", "flex", "flex-col", "items-center", "justify-center", "w-full", "gap-4")}>
 						<main className={cn("w-96")}>{children}</main>
 					</div>
+					<ScrollAnchor />
 				</Providers>
 			</body>
 		</html>
