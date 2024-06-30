@@ -1,5 +1,6 @@
 import { SKILLS_BY_TIER } from "@/lib/data/skills_by_tier"
 import type { SkillWithType, Tier } from "@/lib/types/skill"
+import Fuse from "fuse.js"
 import { Skill } from "megaten"
 import { NextResponse } from "next/server"
 
@@ -9,11 +10,13 @@ export const GET = async (request: Request) => {
 	const skillNamePart = searchParams.get("skillNamePart")
 	if (!skillNamePart) return new NextResponse("skillNamePart query param is required", { status: 400 })
 
-	const skills = Array.from(Skill.map.values()).filter(
-		(skill) =>
-			skill.name.toLowerCase().includes(skillNamePart.toLowerCase()) ||
-			skill.aliases.some((alias) => alias.toLowerCase().includes(skillNamePart.toLowerCase()))
-	)
+	const skills = new Fuse(Array.from(Skill.map.values()), {
+		includeScore: true,
+		keys: ["name", "aliases"]
+	})
+		.search(skillNamePart)
+		.filter((demon) => demon.score && demon.score <= 0.2)
+		.map((demon) => demon.item)
 
 	if (skills.length === 0) return new NextResponse("No matching skills found", { status: 404 })
 
